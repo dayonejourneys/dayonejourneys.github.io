@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DayOneJourneys — AI Prompt Packs for HR, Recruiting & Management</title>
+  <meta name="description" content="Copy-paste AI prompts for HR managers, recruiters, people managers, and solopreneurs. Save 5+ hours a week on writing tasks. Works with Claude, ChatGPT, and Gemini — all free.">
+  <meta name="keywords" content="AI prompts HR manager, AI for recruiters, people manager AI tools, HR AI playbook, ChatGPT prompts HR, Claude prompts recruiting">
+  <meta property="og:title" content="DayOneJourneys — AI Prompt Packs for HR Professionals">
+  <meta property="og:description" content="50 structured AI prompts for every major HR task. Copy, paste, save hours. Works with Claude, ChatGPT, and Gemini.">
+  <meta property="og:image" content="https://dayonejourneys.github.io/og-image.png">
+  <meta property="og:url" content="https://dayonejourneys.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --maroon: #2A0202;
+      --maroon2: #3E0A04;
+      --maroon3: #5C1208;
+      --gold: #FFB400;
+      --gold2: #C8862A;
+      --gold3: #E8A020;
+      --offwhite: #F5EEE2;
+      --sand: #DCC090;
+      --cream: #FFF8EC;
+      --text-dark: #1A0101;
+      --text-mid: #6B3010;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--maroon);
+      color: var(--offwhite);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(42, 2, 2, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,180,0,0.15);
+    }
+
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--offwhite);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--sand);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--maroon) !important;
+      font-weight: 600 !important;
+      padding: 8px 20px;
+      border-radius: 4px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold3) !important; color: var(--maroon) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 40px 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg-circles {
+      position: absolute;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 700px;
+      height: 700px;
+      pointer-events: none;
+    }
+
+    .hero-bg-circles circle {
+      fill: none;
+      stroke: rgba(255,180,0,0.06);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,180,0,0.12);
+      border: 1px solid rgba(255,180,0,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(52px, 7vw, 88px);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--sand);
+      font-weight: 300;
+      max-width: 560px;
+      margin-bottom: 48px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--maroon);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--gold3); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--offwhite);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      border: 1px solid rgba(245,238,226,0.25);
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      background: rgba(255,180,0,0.08);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(245,238,226,0.1);
+      animation: fadeUp 0.6s 0.4s ease both;
+      flex-wrap: wrap;
+    }
+
+    .stat-item { text-align: left; }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--sand);
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    /* ── GOLD DIVIDER ── */
+    .gold-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2), transparent);
+    }
+
+    /* ── SECTION COMMONS ── */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 40px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      font-size: 18px;
+      color: var(--sand);
+      line-height: 1.7;
+      max-width: 560px;
+      font-weight: 300;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      background: rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(255,180,0,0.1);
+      border-bottom: 1px solid rgba(255,180,0,0.1);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-top: 64px;
+    }
+
+    .step {
+      position: relative;
+    }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 900;
+      color: rgba(255,180,0,0.12);
+      line-height: 1;
+      margin-bottom: -10px;
+    }
+
+    .step-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--offwhite);
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      color: var(--sand);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── PRODUCTS ── */
+    .products-section { padding-top: 80px; }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: rgba(245,238,226,0.04);
+      border: 1px solid rgba(245,238,226,0.1);
+      border-radius: 8px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .product-card:hover {
+      border-color: rgba(255,180,0,0.4);
+      transform: translateY(-3px);
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover::before { transform: scaleX(1); }
+
+    .product-card.featured {
+      background: rgba(255,180,0,0.06);
+      border-color: rgba(255,180,0,0.3);
+      grid-column: span 2;
+    }
+
+    @media (max-width: 768px) {
+      .product-card.featured { grid-column: span 1; }
+    }
+
+    .product-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(255,180,0,0.1);
+      border: 1px solid rgba(255,180,0,0.2);
+      border-radius: 3px;
+      padding: 3px 10px;
+      margin-bottom: 20px;
+    }
+
+    .product-tag.bundle {
+      background: var(--gold);
+      color: var(--maroon);
+      border-color: var(--gold);
+    }
+
+    .product-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--offwhite);
+    }
+
+    .product-desc {
+      font-size: 14px;
+      color: var(--sand);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .product-features {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .product-features li {
+      font-size: 13px;
+      color: var(--sand);
+      padding: 5px 0;
+      padding-left: 20px;
+      position: relative;
+      font-weight: 400;
+    }
+
+    .product-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(245,238,226,0.1);
+    }
+
+    .product-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .product-price-note {
+      font-size: 12px;
+      color: var(--sand);
+      font-weight: 300;
+    }
+
+    .product-cta {
+      background: var(--gold);
+      color: var(--maroon);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .product-cta:hover { background: var(--gold3); }
+
+    .bundle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 16px;
+    }
+
+    .bundle-item {
+      font-size: 13px;
+      color: var(--sand);
+    }
+
+    .bundle-item strong {
+      display: block;
+      color: var(--offwhite);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    /* ── PROMPT PREVIEW ── */
+    .preview-section {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,180,0,0.08);
+    }
+
+    .prompt-card {
+      background: var(--maroon2);
+      border: 1px solid rgba(255,180,0,0.15);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .prompt-card-label {
+      position: absolute;
+      top: -12px;
+      left: 24px;
+      background: var(--gold);
+      color: var(--maroon);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 3px;
+    }
+
+    .prompt-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--offwhite);
+      margin-bottom: 8px;
+    }
+
+    .prompt-meta {
+      font-size: 12px;
+      color: var(--gold2);
+      margin-bottom: 20px;
+    }
+
+    .prompt-body {
+      background: rgba(0,0,0,0.3);
+      border-radius: 6px;
+      padding: 20px 24px;
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: 13px;
+      color: var(--sand);
+      line-height: 1.8;
+      border-left: 3px solid var(--gold);
+    }
+
+    .prompt-body .bracket { color: var(--gold); font-weight: 600; }
+
+    .prompt-output {
+      margin-top: 16px;
+      padding: 16px 20px;
+      background: rgba(255,180,0,0.05);
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--sand);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .prompt-output::before {
+      content: 'Example output → ';
+      color: var(--gold2);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* ── WORKS WITH ── */
+    .tools-section { text-align: center; padding: 60px 40px; }
+
+    .tools-label {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 28px;
+    }
+
+    .tools-row {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .tool-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: rgba(245,238,226,0.4);
+      transition: color 0.2s;
+    }
+
+    .tool-name:hover { color: var(--offwhite); }
+
+    .tool-divider {
+      color: rgba(255,180,0,0.3);
+      font-size: 20px;
+    }
+
+    .tools-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--gold2);
+    }
+
+    /* ── TESTIMONIAL / TRUST ── */
+    .trust-section {
+      background: rgba(255,180,0,0.04);
+      border-top: 1px solid rgba(255,180,0,0.1);
+      border-bottom: 1px solid rgba(255,180,0,0.1);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    .trust-item {
+      padding: 28px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 6px;
+      border: 1px solid rgba(245,238,226,0.08);
+    }
+
+    .trust-quote {
+      font-size: 15px;
+      color: var(--offwhite);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .trust-quote::before { content: '"'; color: var(--gold); font-size: 24px; line-height: 0; vertical-align: -8px; margin-right: 2px; }
+    .trust-quote::after { content: '"'; color: var(--gold); font-size: 24px; line-height: 0; vertical-align: -8px; margin-left: 2px; }
+
+    .trust-role {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gold2);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      text-align: center;
+      padding: 120px 40px;
+    }
+
+    .cta-section h2 {
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .cta-section .section-intro {
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(245,238,226,0.08);
+      padding: 48px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sand);
+    }
+
+    .footer-brand span { color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--sand);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(220,192,144,0.4);
+      width: 100%;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      section { padding: 72px 20px; }
+      .hero { padding: 100px 20px 60px; }
+      footer { padding: 40px 20px; flex-direction: column; align-items: flex-start; }
+      .hero-stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo"><span>DayOne</span>Journeys</a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#preview">See a Prompt</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="https://ko-fi.com/dayonejourneys" target="_blank" class="nav-cta">Shop All →</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-bg-circles" viewBox="0 0 700 700">
+      <circle cx="350" cy="350" r="150"/>
+      <circle cx="350" cy="350" r="230"/>
+      <circle cx="350" cy="350" r="310"/>
+      <circle cx="350" cy="350" r="390"/>
+    </svg>
+    <div class="hero-content">
+      <div class="hero-badge">AI Prompt Packs for HR Professionals</div>
+      <h1>Stop Writing<br>from <em>Scratch.</em></h1>
+      <p class="hero-sub">50 structured AI prompts for every major HR task. Copy, paste, and save 5+ hours a week. Works with Claude, ChatGPT, and Gemini — all free.</p>
+      <div class="hero-actions">
+        <a href="https://ko-fi.com/dayonejourneys" target="_blank" class="btn-primary">
+          Browse All Products →
+        </a>
+        <a href="#products" class="btn-secondary">See What's Inside</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Structured prompts</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Hours saved weekly</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Professional playbooks</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">$0</div>
+          <div class="stat-label">AI tools needed (all free)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-bar"></div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section fade-in">
+    <div class="section-label">How It Works</div>
+    <h2>Open. Paste. Done.</h2>
+    <p class="section-intro">Every prompt is pre-engineered for HR work. You fill in the brackets and get professional output in minutes.</p>
+    <div class="steps-grid">
+      <div class="step fade-in">
+        <div class="step-num">01</div>
+        <div class="step-title">Open any free AI tool</div>
+        <div class="step-desc">Claude.ai, ChatGPT, or Google Gemini. No paid subscription needed. Any free account works.</div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">02</div>
+        <div class="step-title">Find your prompt</div>
+        <div class="step-desc">Each playbook has 50 prompts organized by task. Search for what you need — job description, performance review, difficult conversation.</div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">03</div>
+        <div class="step-title">Fill in the brackets</div>
+        <div class="step-desc">Every prompt has [BRACKETED PLACEHOLDERS] — replace them with your specifics. Takes 60 seconds.</div>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">04</div>
+        <div class="step-title">Review and send</div>
+        <div class="step-desc">Read the output, make any adjustments that reflect your voice, and use it. You do the thinking. AI does the writing.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="tools-section fade-in">
+    <div class="tools-label">Works with all free AI tools</div>
+    <div class="tools-row">
+      <div class="tool-name">Claude</div>
+      <div class="tool-divider">·</div>
+      <div class="tool-name">ChatGPT</div>
+      <div class="tool-divider">·</div>
+      <div class="tool-name">Gemini</div>
+    </div>
+    <div class="tools-note">No AI subscription required. Every prompt works with the free tier of all three tools.</div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section" id="products">
+    <div class="products-header fade-in">
+      <div>
+        <div class="section-label">The Playbooks</div>
+        <h2>Pick Your Role.</h2>
+      </div>
+      <a href="https://ko-fi.com/dayonejourneys" target="_blank" class="btn-secondary">View All on Ko-fi →</a>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- HR Playbook -->
+      <a href="https://journeyer644.gumroad.com/l/ai-prompts-hr-managers" target="_blank" class="product-card fade-in">
+        <div class="product-tag">HR Professionals</div>
+        <div class="product-title">HR Manager's<br>AI Playbook</div>
+        <p class="product-desc">50 prompts for every major HR task — from bias-free job descriptions to legally-reviewed performance reviews.</p>
+        <ul class="product-features">
+          <li>Hiring &amp; job descriptions — 3 min, not 45</li>
+          <li>Performance reviews with legal audit built in</li>
+          <li>Onboarding plans, policies, employee relations</li>
+          <li>Difficult conversation scripts</li>
+        </ul>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$19</div>
+            <div class="product-price-note">Instant PDF download</div>
+          </div>
+          <div class="product-cta">Get It →</div>
+        </div>
+      </a>
+
+      <!-- Recruiter Pack -->
+      <a href="https://ko-fi.com/dayonejourneys" target="_blank" class="product-card fade-in">
+        <div class="product-tag">Recruiters &amp; TA Teams</div>
+        <div class="product-title">Recruiter's<br>AI Pack</div>
+        <p class="product-desc">50 prompts for in-house recruiters. Saves 3-4 hours per requisition from sourcing to signed offer.</p>
+        <ul class="product-features">
+          <li>LinkedIn outreach with 3x higher reply rates</li>
+          <li>Boolean search strings ready to paste</li>
+          <li>Verbal offer scripts &amp; counter-offer responses</li>
+          <li>Candidate experience &amp; analytics templates</li>
+        </ul>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$19</div>
+            <div class="product-price-note">Instant PDF download</div>
+          </div>
+          <div class="product-cta">Get It →</div>
+        </div>
+      </a>
+
+      <!-- Manager Toolkit -->
+      <a href="https://ko-fi.com/dayonejourneys" target="_blank" class="product-card fade-in">
+        <div class="product-tag">People Managers</div>
+        <div class="product-title">Manager's<br>AI Toolkit</div>
+        <p class="product-desc">50 prompts for people managers and team leads. Every hard conversation, every difficult situation — prepared.</p>
+        <ul class="product-features">
+          <li>Difficult conversation scripts you can practice</li>
+          <li>Development plans that actually retain people</li>
+          <li>Team communication for remote &amp; hybrid teams</li>
+          <li>OKRs, strategy, and leadership frameworks</li>
+        </ul>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$19</div>
+            <div class="product-price-note">Instant PDF download</div>
+          </div>
+          <div class="product-cta">Get It →</div>
+        </div>
+      </a>
+
+      <!-- Solopreneur Pack -->
+      <a href="https://ko-fi.com/dayonejourneys" target="_blank" class="product-card fade-in">
+        <div class="product-tag">Solopreneurs &amp; Freelancers</div>
+        <div class="product-title">Solopreneur<br>Admin Pack</div>
+        <p class="product-desc">50 prompts for one-person businesses. Client communication, proposals, content, finance, and systems.</p>
+        <ul class="product-features">
+          <li>Client onboarding, scope docs &amp; late payment follow-ups</li>
+          <li>Value-based proposals that get signed</li>
+          <li>A week of social content in 45 minutes</li>
+          <li>SOPs, invoicing &amp; quarterly planning</li>
+        </ul>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$19</div>
+            <div class="product-price-note">Instant PDF download</div>
+          </div>
+          <div class="product-cta">Get It →</div>
+        </div>
+      </a>
+
+      <!-- Bundle -->
+      <a href="https://ko-fi.com/dayonejourneys" target="_blank" class="product-card featured fade-in">
+        <div class="product-tag bundle">Best Value — Complete Bundle</div>
+        <div class="product-title">HR Professional's<br>Complete Bundle</div>
+        <p class="product-desc">All three HR playbooks in one download. 150 prompts covering every major task across HR, recruiting, and people management. For HR generalists, HRBPs, and small business owners who wear all the hats.</p>
+        <div class="bundle-grid">
+          <div class="bundle-item"><strong>HR Manager's AI Playbook</strong>50 prompts — hiring, reviews, onboarding, policies, relations</div>
+          <div class="bundle-item"><strong>Recruiter's AI Pack</strong>50 prompts — sourcing, screening, offers, brand, analytics</div>
+          <div class="bundle-item"><strong>Manager's AI Toolkit</strong>50 prompts — communication, performance, conflict, strategy</div>
+          <div class="bundle-item"><strong>Bonus: 5-Min AI Setup Guide</strong>Get started in your first 5 minutes — for any skill level</div>
+        </div>
+        <div class="product-footer" style="margin-top:28px">
+          <div>
+            <div class="product-price">$27 <span style="font-size:16px;color:var(--sand);text-decoration:line-through">$57</span></div>
+            <div class="product-price-note">Save $30 vs. buying separately</div>
+          </div>
+          <div class="product-cta">Get the Bundle →</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- PROMPT PREVIEW -->
+  <section class="preview-section" id="preview">
+    <div class="section-label fade-in">See It In Action</div>
+    <h2 class="fade-in">What a Prompt Looks Like</h2>
+    <p class="section-intro fade-in">Every prompt includes the task, the time saved, copy-paste text with brackets, an example output, and a pro tip.</p>
+
+    <div class="prompt-card fade-in">
+      <div class="prompt-card-label">Prompt #2 — HR Manager's AI Playbook</div>
+      <div class="prompt-title">Write a performance review in under 10 minutes</div>
+      <div class="prompt-meta">⏱ Saves 45-60 min per review · Works with Claude, ChatGPT, Gemini</div>
+      <div class="prompt-body">You are an HR professional helping a manager write a formal
+performance review. Here are the manager's raw notes:
+<span class="bracket">[PASTE RAW NOTES HERE]</span>
+
+Employee: <span class="bracket">[NAME]</span> | Role: <span class="bracket">[JOB TITLE]</span>
+Rating: <span class="bracket">[EXCEEDS / MEETS / BELOW EXPECTATIONS]</span>
+Period: <span class="bracket">[REVIEW PERIOD]</span>
+
+Write a 300-400 word professional narrative using concrete
+examples from the notes. Use observable behavior only —
+no character judgments. Flag any language that references
+protected characteristics or isn't tied to a specific example.</div>
+      <div class="prompt-output">A polished 300-word performance narrative with specific behavioral examples, a legal language audit identifying any risky phrases, and suggested replacements — ready to review and send in 10 minutes.</div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust-section fade-in">
+    <div class="section-label">Why It Works</div>
+    <h2>Built for HR Work Specifically</h2>
+    <p class="section-intro">Generic AI prompts produce generic output. These are engineered for HR — with legal safety checks, role-specific context, and example outputs built in.</p>
+    <div class="trust-grid">
+      <div class="trust-item fade-in">
+        <p class="trust-quote">The bias audit prompt caught language in a termination document that would have been a real problem. 60 seconds.</p>
+        <div class="trust-role">HR Manager · Financial Services</div>
+      </div>
+      <div class="trust-item fade-in">
+        <p class="trust-quote">I wrote a job description in 4 minutes. It was better than the one I spent 90 minutes on last month.</p>
+        <div class="trust-role">Head of Talent · Tech Startup</div>
+      </div>
+      <div class="trust-item fade-in">
+        <p class="trust-quote">Used the difficult conversation script. I practiced it once, walked in prepared. It went better than any I've had in 10 years of managing.</p>
+        <div class="trust-role">Engineering Manager · SaaS Company</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section fade-in" id="tools">
+    <div class="section-label">Get Started</div>
+    <h2>Your First Prompt in<br><em>5 Minutes</em></h2>
+    <p class="section-intro">Download any playbook, open Claude.ai or ChatGPT, paste the first prompt that matches your current task. You'll see the difference immediately.</p>
+    <div class="cta-actions">
+      <a href="https://ko-fi.com/dayonejourneys" target="_blank" class="btn-primary">Browse All Products on Ko-fi →</a>
+      <a href="https://journeyer644.gumroad.com/l/ai-prompts-hr-managers" target="_blank" class="btn-secondary">HR Playbook on Gumroad</a>
+    </div>
+    <p style="margin-top:24px;font-size:13px;color:var(--gold2)">Instant PDF download · No subscription · Works with all free AI tools · dayonejourneys@gmail.com</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand"><span>DayOne</span>Journeys</div>
+    <ul class="footer-links">
+      <li><a href="https://ko-fi.com/dayonejourneys" target="_blank">Ko-fi Shop</a></li>
+      <li><a href="https://journeyer644.gumroad.com/l/ai-prompts-hr-managers" target="_blank">Gumroad</a></li>
+      <li><a href="mailto:dayonejourneys@gmail.com">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 DayOneJourneys · AI prompt packs for HR professionals · dayonejourneys@gmail.com</div>
+  </footer>
+
+  <script>
+    // Intersection observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
